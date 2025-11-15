@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="hi" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale-1.0">
+    <title>Deepak Sharma | Operations Leader & AI Transformation Expert</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Inter Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Custom Styles */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0a0a; /* Premium Black */
+            color: #e0e0e0; /* Off-white for easy reading */
+        }
+
+        /* Gold Accent Colors */
+        .text-gold {
+            color: #fcd34d; /* Tailwind 'amber-300' */
+        }
+        .bg-gold {
+            background-color: #fcd34d;
+        }
+        .border-gold {
+            border-color: #fcd34d;
+        }
+
+        /* Scroll-in animation */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .animate-on-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Floating Expertise Panel (Apple-style slide-in) */
+        #expertise-panel {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%; /* Full width on mobile */
+            max-width: 480px; /* Thoda bada panel */
+            background-color: rgba(20, 20, 20, 0.85); /* Dark glassmorphism */
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            z-index: 60;
+            transform: translateX(100%);
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            border-left: 1px solid #333;
+        }
+
+        #expertise-panel.is-open {
+            transform: translateX(0);
+        }
+
+        /* Panel Content Animation */
+        #expertise-panel-content {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.2s;
+        }
+
+        #expertise-panel.is-open #expertise-panel-content {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Panel Scrollbar */
+        #expertise-panel-scroll::-webkit-scrollbar {
+            width: 6px;
+        }
+        #expertise-panel-scroll::-webkit-scrollbar-track {
+            background: #222;
+        }
+        #expertise-panel-scroll::-webkit-scrollbar-thumb {
+            background: #fcd34d;
+            border-radius: 10px;
+        }
+
+        /* Project Card Hover Effect */
+        .project-card {
+            transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+            border: 1px solid #333;
+        }
+
+        .project-card:hover {
+            transform: scale(1.03);
+            border-color: #fcd34d;
+            box-shadow: 0 25px 50px -12px rgba(252, 211, 77, 0.15);
+        }
+
+        /* Expertise Card Hover */
+        .expertise-card {
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            cursor: pointer;
+        }
+        .expertise-card:hover {
+            transform: translateY(-8px);
+            background-color: #1a1a1a;
+        }
+        
+        /* Sticky Header Scroll Effect */
+        header.scrolled {
+            background-color: rgba(10, 10, 10, 0.8);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-bottom: 1px solid #222;
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+
+    <!-- Header -->
+    <header id="main-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-3xl font-bold text-white tracking-tight">
+                Deepak <span class="text-gold">Sharma</span>
+            </div>
+            <div class="space-x-8 hidden md:flex">
+                <a href="#home" class="text-gray-300 hover:text-gold transition duration-300">Home</a>
+                <a href="#expertise-ops" class="text-gray-300 hover:text-gold transition duration-300">Operations</a>
+                <a href="#expertise-digital" class="text-gray-300 hover:text-gold transition duration-300">Digital & AI</a>
+                <a href="#projects" class="text-gray-300 hover:text-gold transition duration-300">Projects</a>
+                <a href="#contact" class="text-gray-300 hover:text-gold transition duration-300">Contact</a>
+            </div>
+            <a href="#contact" class="hidden md:inline-block px-5 py-2 bg-gold text-black font-semibold rounded-lg hover:bg-amber-300 transition duration-300">
+                Contact Me
+            </a>
+            <!-- Mobile Menu (Simple Icon) -->
+            <div class="md:hidden">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+
+        <!-- Home Section -->
+        <section id="home" class="min-h-screen flex items-center pt-24 pb-16">
+            <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 items-center gap-12">
+                <!-- Left: Text Content -->
+                <div class="text-center md:text-left">
+                    <h1 class="text-5xl md:text-6xl lg:text-7xl font-black text-white leading-tight animate-on-scroll">
+                        Operations Leader
+                        <span class="block text-gold">Digital & AI Transformation Expert</span>
+                    </h1>
+                    <p class="mt-6 text-xl text-gray-300 max-w-lg mx-auto md:mx-0 animate-on-scroll" style="transition-delay: 0.1s;">
+                        EPC Projects | Workforce Logistics | International Experience
+                        <span class="block mt-2 font-semibold">🇮🇳 🇰🇼 🇶🇦 🇸🇦 🇮🇶 🇮🇩</span>
+                    </p>
+                    <div class="mt-10 space-y-4 md:space-y-0 md:space-x-4 animate-on-scroll" style="transition-delay: 0.2s;">
+                        <a href="#contact" class="inline-block w-full md:w-auto px-8 py-3 bg-gold text-black text-lg font-semibold rounded-lg shadow-lg hover:bg-amber-300 transition duration-300 transform hover:scale-105">
+                            Contact Me
+                        </a>
+                        <a href="#projects" class="inline-block w-full md:w-auto px-8 py-3 border-2 border-gray-600 text-white text-lg font-semibold rounded-lg hover:bg-gray-800 hover:border-gray-700 transition duration-300">
+                            View Projects
+                        </a>
+                    </div>
+                    <div class="mt-8 text-gray-400 space-y-2 text-center md:text-left animate-on-scroll" style="transition-delay: 0.3s;">
+                        <p>E: <a href="mailto:deepakhdec@gmail.com" class="hover:text-gold">deepakhdec@gmail.com</a></p>
+                        <p>W: <a href="https://wa.me/919631815142" target="_blank" class="hover:text-gold">+91 96318 15142</a></p>
+                    </div>
+                </div>
+                <!-- Right: Professional Photo -->
+                <div class="w-full h-96 md:h-[500px] animate-on-scroll" style="transition-delay: 0.1s;">
+                    <img src="https://i.imgur.com/aMH8PdC.jpeg" alt="Deepak Sharma Professional Photo" class="w-full h-full object-cover rounded-xl shadow-2xl border-4 border-gray-800">
+                </div>
+            </div>
+        </section>
+
+        <!-- Executive Summary Section -->
+        <section id="about" class="py-24 bg-gray-900">
+            <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 items-center gap-16">
+                <!-- Left: Photo -->
+                <div class="w-full h-96 md:h-[500px] animate-on-scroll">
+                    <img src="https://i.imgur.com/FsOxXkn.jpg" alt="Deepak Sharma at Project Site" class="w-full h-full object-cover rounded-xl shadow-2xl border-4 border-gray-800">
+                </div>
+                <!-- Right: Text -->
+                <div class="animate-on-scroll" style="transition-delay: 0.1s;">
+                    <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+                        Executive Summary
+                    </h2>
+                    <p class="text-lg text-gray-300 leading-relaxed mb-6">
+                        A multi-skilled professional with 12+ years of global experience across Accommodation Operations, Facility Management, Digital Transformation, and AI Automation.
+                    </p>
+                    <p class="text-lg text-gray-300 leading-relaxed mb-8">
+                        My expertise blends traditional EPC operations with modern AI-based reporting, digital branding, analytics, and automation, making me a uniquely versatile asset in today’s hybrid professional environment.
+                    </p>
+                    <h4 class="text-xl font-bold text-white mb-4">Global Megaproject Experience</h4>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="bg-gray-800 text-gold font-medium px-4 py-2 rounded-full">JGC Corporation</span>
+                        <span class="bg-gray-800 text-gold font-medium px-4 py-2 rounded-full">BP Indonesia</span>
+                        <span class="bg-gray-800 text-gray-300 font-medium px-4 py-2 rounded-full">Hyundai E&C (HDEC)</span>
+                        <span class="bg-gray-800 text-gray-300 font-medium px-4 py-2 rounded-full">KNRP Kuwait</span>
+                        <span class="bg-gray-800 text-gray-300 font-medium px-4 py-2 rounded-full">Basrah Refinery</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Core EPC & Operations Expertise Section -->
+        <section id="expertise-ops" class="py-24">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl md:text-5xl font-bold text-center text-white mb-16 animate-on-scroll">Core EPC & Operations Expertise</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Card 1 -->
+                    <div class="expertise-card bg-black p-8 rounded-xl border border-gray-800 animate-on-scroll" data-expertise-key="camp-management">
+                        <div class="w-16 h-16 bg-gray-800 rounded-full flex items-center justify-center mb-6">
+                            <svg class="w-8 h-8 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m-1 4h1m6-4h1m-1 4h1m-1-8h1m-1 4h1m-1 4h1m-1-8h1"></path></svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-3">Accommodation & Camp Ops</h3>
+                        <p class="text-gray-400 mb-5">Leadership for 14,500+ personnel, housing, catering, safety.</p>
+                        <span class="font-semibold text-gold">View Details &rarr;</span>
+                    </div>
+                    
+                    <!-- Card 2 -->
+                    <div class="expertise-card bg-black p-8 rounded-xl border border-gray-800 animate-on-scroll" style="transition-delay: 0.1s;" data-expertise-key="facility-ops">
+                        <div class="w-16 h-16 bg-gray-800 rounded-full flex items-center justify-center mb-6">
+                           <svg class="w-8 h-8 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-3">Facility & Infrastructure</h3>
+                        <p class="text-gray-400 mb-5">200+ systems, predictive maintenance, 68% downtime reduction.</p>
+                        <span class="font-semibold text-gold">View Details &rarr;</span>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="expertise-card bg-black p-8 rounded-xl border border-gray-800 animate-on-scroll" style="transition-delay: 0.2s;" data-expertise-key="logistics">
+                        <div class="w-16 h-16 bg-gray-800 rounded-full flex items-center justify-center mb-6">
+                            <svg class="w-8 h-8 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z"></path></svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-3">Workforce Logistics & AI</h3>
+                        <p class="text-gray-400 mb-5">AI-powered POB forecasting, room allocation, mobilization planning.</p>
+                        <span class="font-semibold text-gold">View Details &rarr;</span>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="expertise-card bg-black p-8 rounded-xl border border-gray-800 animate-on-scroll" data-expertise-key="vendor-cost">
+                        <div class="w-16 h-16 bg-gray-800 rounded-full flex items-center justify-center mb-6">
+                            <svg class="w-8 h-8 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-3">Vendor & Commercial</h3>
+                        <p class="text-gray-400 mb-5">35+ contracts, $1.7M+ annual savings, KPI dashboards.</p>
+                        <span class="font-semibold text-gold">View Details &rarr;</span>
+                    </div>
+
+                    <!-- Card 5 -->
+                    <div class="expertise-card bg-black p-8 rounded-xl border border-gray-800 animate-on-scroll" style="transition-delay: 0.1s;" data-expertise-key="reporting-ai">
+                        <div class="w-16 h-16 bg-gray-800 rounded-full flex items-center justify-center mb-6">
+                            <svg class="w-8 h-8 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-3">AI & Digital Reporting</h3>
+                        <p class="text-gray-400 mb-5">16+ PowerBI dashboards, ChatGPT automation, QR tracking.</p>
+                        <span class="font-semibold text-gold">View Details &rarr;</span>
+                    </div>
+                </div>
+
+                <!-- 
+                ============================================================
+                ✨ GEMINI API INTEGRATION - START
+                ============================================================
+                -->
+                <div class="expertise-card bg-black p-8 rounded-xl border border-gold border-2 shadow-2xl shadow-amber-300/10 animate-on-scroll md:col-span-2 lg:col-span-3 mt-10" style="transition-delay: 0.3s;">
+                    <div class="flex flex-col lg:flex-row items-start lg:items-center gap-6">
+                        <!-- Icon -->
+                        <div class="w-20 h-20 bg-gray-800 rounded-full flex items-center justify-center mb-6 lg:mb-0 flex-shrink-0 border-2 border-gold">
+                            <svg class="w-10 h-10 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M12 21v-1m0-16a1 1 0 011 1v1a1 1 0 01-2 0V5a1 1 0 011-1zm0 16a1 1 0 011 1v1a1 1 0 01-2 0v-1a1 1 0 011-1z"></path></svg>
+                        </div>
+                        
+                        <!-- Title & Description -->
+                        <div class="flex-grow">
+                            <h3 class="text-3xl font-bold text-white mb-3">✨ Live Gemini AI Demo</h3>
+                            <p class="text-gray-400 text-lg">
+                                Mere AI skills ko live test karein. Ek business idea likhein (jaise 'students ke liye coffee shop') aur AI ko ek mini-strategy generate karne dein.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- AI Interaction Area -->
+                    <div class="mt-6">
+                        <textarea id="ai-prompt" rows="3" class="w-full px-5 py-4 rounded-lg bg-gray-900 border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-gold focus:border-gold transition duration-300" placeholder="Aapka business idea yahan likhein..."></textarea>
+                        
+                        <button id="ai-submit-btn" class="w-full mt-4 px-8 py-4 bg-gold text-black text-lg font-semibold rounded-lg shadow-lg hover:bg-amber-300 transition duration-300 transform hover:scale-105">
+                            ✨ Strategy Generate Karein
+                        </button>
+
+                        <!-- AI Result Area -->
+                        <div id="ai-result-container" class="mt-6 hidden">
+                            <h4 class="text-xl font-bold text-white mb-3">AI Advisor ka Sujhav:</h4>
+                            <div id="ai-result-text" class="p-6 rounded-lg bg-gray-800 border border-gray-700 text-gray-300 whitespace-pre-wrap">
+                                <!-- AI response will be injected here -->
+                            </div>
+                        </div>
+
+                        <!-- Loading Indicator -->
+                        <div id="ai-loading" class="mt-6 text-center text-gold font-semibold hidden">
+                            <div class="inline-block w-6 h-6 border-4 border-t-gold border-gray-700 rounded-full animate-spin" role="status"></div>
+                            <span class="ml-3">AI strategy generate kar raha hai...</span>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- 
+                ============================================================
+                ✨ GEMINI API INTEGRATION - END
+                ============================================================
+                -->
+
+            </div>
+        </section>
+        
+        <!-- International Project Portfolio Section -->
+        <section id="projects" class="py-24">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl md:text-5xl font-bold text-center text-white mb-16 animate-on-scroll">International Project Portfolio</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                    
+                    <!-- Project 1 -->
+                    <div class="project-card bg-gray-900 rounded-xl overflow-hidden animate-on-scroll">
+                        <img src="https://placehold.co/600x400/b91c1c/fcd34d?text=Indonesia+Project" alt="BP JGC Tangguh" class="w-full h-60 object-cover">
+                        <div class="p-8">
+                            <h3 class="text-2xl font-bold text-white mb-3">🇮🇩 BP-JGC Tangguh (Indonesia)</h3>
+                            <p class="text-gray-400 mb-4">Role: Accommodation Coordinator. Digital & AI Reporting.</p>
+                            <span class="inline-block bg-gold/10 text-gold text-sm font-bold px-4 py-1 rounded-full">AI-Powered POB Forecasting</span>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="project-card bg-gray-900 rounded-xl overflow-hidden animate-on-scroll" style="transition-delay: 0.1s;">
+                        <img src="https://placehold.co/600x400/1e3a8a/fcd34d?text=Basrah+Project+(Iraq)" alt="Basrah Refinery Upgrading Project" class="w-full h-60 object-cover">
+                        <div class="p-8">
+                            <h3 class="text-2xl font-bold text-white mb-3">🇮🇶 Basrah Refinery (Iraq)</h3>
+                            <p class="text-gray-400 mb-4">Role: Sr. Accommodation & Facility Ops. 14,500 Workforce.</p>
+                            <span class="inline-block bg-gold/10 text-gold text-sm font-bold px-4 py-1 rounded-full">$1M+ Annual Savings</span>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="project-card bg-gray-900 rounded-xl overflow-hidden animate-on-scroll" style="transition-delay: 0.2s;">
+                        <img src="https://placehold.co/600x400/065f46/fcd34d?text=Amiral+STP+(KSA)" alt="Amiral STP Package #1 (Saudi Arabia)" class="w-full h-60 object-cover">
+                        <div class="p-8">
+                            <h3 class="text-2xl font-bold text-white mb-3">🇸🇦 Amiral STP (Saudi Arabia)</h3>
+                            <p class="text-gray-400 mb-4">Role: Accommodation & Digital Systems Specialist (Hyundai).</p>
+                            <span class="inline-block bg-gold/10 text-gold text-sm font-bold px-4 py-1 rounded-full">99.7% SLA Compliance</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 4 -->
+                    <div class="project-card bg-gray-900 rounded-xl overflow-hidden animate-on-scroll">
+                        <img src="https://placehold.co/600x400/7e22ce/fcd34d?text=Lusail+Tower+(Qatar)" alt="Lusail Plaza Tower Project (Qatar)" class="w-full h-60 object-cover">
+                        <div class="p-8">
+                            <h3 class="text-2xl font-bold text-white mb-3">🇶🇦 Lusail Plaza Tower (Qatar)</h3>
+                            <p class="text-gray-400 mb-4">Role: Facility Operations Lead. 3,200 Workforce.</p>
+                            <span class="inline-block bg-gold/10 text-gold text-sm font-bold px-4 py-1 rounded-full">9,600 Meals/Day</span>
+                        </div>
+                    </div>
+
+                    <!-- Project 5 -->
+                    <div class="project-card bg-gray-900 rounded-xl overflow-hidden animate-on-scroll" style="transition-delay: 0.1s;">
+                        <img src="https://placehold.co/600x400/a16207/fcd34d?text=KNRP+(Kuwait)" alt="KNRP LNGI (Kuwait)" class="w-full h-60 object-cover">
+                        <div class="p-8">
+                            <h3 class="text-2xl font-bold text-white mb-3">🇰🇼 KNRP LNGI (Kuwait)</h3>
+                            <p class="text-gray-400 mb-4">Role: Digital & Facility Ops. 9,300 Workforce.</p>
+                            <span class="inline-block bg-gold/10 text-gold text-sm font-bold px-4 py-1 rounded-full">$125K Quarterly Saving</span>
+                        </div>
+                    </div>
+
+                    <!-- Project 6 -->
+                    <div class="project-card bg-gray-900 rounded-xl overflow-hidden animate-on-scroll" style="transition-delay: 0.2s;">
+                        <img src="https://placehold.co/600x400/db2777/fcd34d?text=Indian+Refineries" alt="Indian Refineries" class="w-full h-60 object-cover">
+                        <div class="p-8">
+                            <h3 class="text-2xl font-bold text-white mb-3">🇮🇳 Indian Refineries</h3>
+                            <p class="text-gray-400 mb-4">Role: Accommodation & Workforce Ops (Jamnagar, Mangalore, etc.)</p>
+                            <span class="inline-block bg-gold/10 text-gold text-sm font-bold px-4 py-1 rounded-full">8,200+ Workforce</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills & Education Section -->
+        <section id="skills" class="py-24 bg-gray-900">
+            <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16">
+                <!-- Left: Technical Skills -->
+                <div class="animate-on-scroll">
+                    <h2 class="text-3xl font-bold text-white mb-8">Technical Skills</h2>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="bg-gray-800 text-gold font-medium px-4 py-2 rounded-full">PowerBI</span>
+                        <span class="bg-gray-800 text-gold font-medium px-4 py-2 rounded-full">ChatGPT Automation</span>
+                        <span class="bg-gray-800 text-gold font-medium px-4 py-2 rounded-full">Prompt Engineering</span>
+                        <span class="bg-gray-800 text-gray-300 font-medium px-4 py-2 rounded-full">SAP MM/PM</span>
+                        <span class="bg-gray-800 text-gray-300 font-medium px-4 py-2 rounded-full">CAFM & Maximo</span>
+                        <span class="bg-gray-800 text-gray-300 font-medium px-4 py-2 rounded-full">SEO</span>
+                        <span class="bg-gray-800 text-gray-300 font-medium px-4 py-2 rounded-full">Google & Meta Ads</span>
+                        <span class="bg-gray-800 text-gray-300 font-medium px-4 py-2 rounded-full">AI Forecasting</span>
+                        <span class="bg-gray-800 text-gray-300 font-medium px-4 py-2 rounded-full">SOP Development</span>
+                        <span class="bg-gray-800 text-gray-300 font-medium px-4 py-2 rounded-full">Vendor Negotiation</span>
+                    </div>
+                </div>
+
+                <!-- Right: Education & Certs -->
+                <div class="animate-on-scroll" style="transition-delay: 0.1s;">
+                    <h2 class="text-3xl font-bold text-white mb-8">Education & Certifications</h2>
+                    <ul class="space-y-4 text-gray-300">
+                        <li class="flex items-center">
+                            <span class="text-gold mr-3">&#9733;</span> Master’s in Artificial Intelligence (Distinction)
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-gold mr-3">&#9733;</span> Advanced Data Analytics
+                        </li>
+                         <li class="flex items-center">
+                            <span class="text-gold mr-3">&#9733;</span> MBA (HR & Finance)
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-gold mr-3">&#9733;</span> NEBOSH
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-gold mr-3">&#9733;</span> Mechanical Systems (HVAC/STP/WTP)
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-24">
+            <div class="container mx-auto px-6 max-w-3xl text-center">
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 animate-on-scroll">Let's Connect</h2>
+                <p class="text-xl text-gray-400 mb-12 animate-on-scroll" style="transition-delay: 0.1s;">
+                    Available for senior roles in Operations, Logistics, and Digital Transformation, or for Digital/AI consulting projects.
+                </p>
+                <form class="space-y-6 animate-on-scroll" style="transition-delay: 0.2s;">
+                    <div>
+                        <input type="text" placeholder="Your Name" class="w-full px-5 py-4 rounded-lg bg-gray-900 border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-gold focus:border-gold transition duration-300">
+                    </div>
+                    <div>
+                        <input type="email" placeholder="Your Email" class="w-full px-5 py-4 rounded-lg bg-gray-900 border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-gold focus:border-gold transition duration-300">
+                    </div>
+                    <div>
+                        <textarea placeholder="Your Message" rows="5" class="w-full px-5 py-4 rounded-lg bg-gray-900 border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-gold focus:border-gold transition duration-300"></textarea>
+                    </div>
+                    <div>
+                        <button type="submit" class="w-full px-8 py-4 bg-gold text-black text-lg font-semibold rounded-lg shadow-lg hover:bg-amber-300 transition duration-300 transform hover:scale-105">
+                            Send Message
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black border-t border-gray-800 pt-16 pb-8">
+        <div class="container mx-auto px-6 text-center text-gray-500">
+            <div class="text-4xl font-bold text-white mb-4">
+                Deepak <span class="text-gold">Sharma</span>
+            </div>
+            <p class="mb-6">India • Kuwait • Qatar • Saudi Arabia • Iraq • Indonesia</p>
+            <div class="flex justify-center space-x-6 mb-8">
+                <!-- LinkedIn -->
+                <a href="https://linkedin.com/in/alwaysdeepak" target="_blank" class="text-gray-400 hover:text-gold transition duration-300" title="LinkedIn">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.28 1.46h2.56v8.59H3.725v-8.59zM17.638 2H6.362A4.362 4.362 0 002 6.362v11.276A4.362 4.362 0 006.362 22h11.276A4.362 4.362 0 0022 17.638V6.362A4.362 4.362 0 0017.638 2z" clip-rule="evenodd" /></svg>
+                </a>
+                <!-- WhatsApp -->
+                <a href="https://wa.me/919631815142" target="_blank" class="text-gray-400 hover:text-gold transition duration-300" title="WhatsApp">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.451-4.437-9.887-9.888-9.887-5.451 0-9.887 4.436-9.889 9.887-.001 2.225.651 4.315 1.731 6.096l-.433 1.562 1.556-.434zM12.053 6.63c-.47 0-.912.122-1.309.362-.397.239-.738.563-1.002.962-.263.398-.403.856-.402 1.328.002.472.164.925.46 1.321.297.397.676.738 1.109 1.018.433.28 1.05.51 1.817.733.766.223 1.347.197 1.77.14.422-.057.978-.236 1.365-.548.387-.312.63-.733.741-1.21.112-.477.052-1.005-.175-1.464-.228-.458-.636-.82-1.168-1.044s-1.11-.27-1.748-.135c-.638.135-1.134.41-1.511.815-.377.405-.6.866-.662 1.373-.062.506.066 1.026.377 1.488.312.462.793.83 1.38 1.066.587.236 1.223.27 1.84.14.618-.13 1.178-.445 1.638-.908.46-.462.8-1.04 1.002-1.674.202-.634.226-1.314.074-1.97-.153-.657-.468-1.258-.9-1.728-.432-.47-1.003-.81-1.63-1.01C13.896 6.75 12.98 6.63 12.053 6.63z"/></svg>
+                </a>
+            </div>
+            <p>&copy; 2025 Deepak Sharma. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Floating Expertise Panel (Slide-in) -->
+    <div id="expertise-panel">
+        <!-- Close Button -->
+        <button id="panel-close-btn" class="absolute top-6 right-6 z-50 text-gray-400 hover:text-white transition duration-300">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+        
+        <div id="expertise-panel-scroll" class="h-full overflow-y-auto p-10 pt-20">
+            <div id="expertise-panel-content">
+                <!-- Icon will be injected here -->
+                <div id="panel-icon-container" class="w-20 h-20 bg-gray-800 rounded-full flex items-center justify-center mb-8 border-2 border-gold">
+                    <!-- SVG icon goes here -->
+                </div>
+                <!-- Title will be injected here -->
+                <h2 id="panel-title" class="text-4xl font-bold text-white mb-8"></h2>
+                <!-- Bullets will be injected here -->
+                <ul id="panel-bullets" class="space-y-4">
+                    <!-- li elements go here -->
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // --- 0. Expertise Panel Data (Aapke naye resume se) ---
+            const expertiseData = {
+                // EPC Operations
+                "camp-management": {
+                    title: "Accommodation & Camp Ops",
+                    icon: `<svg class="w-10 h-10 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m-1 4h1m6-4h1m-1 4h1m-1-8h1m-1 4h1m-1 4h1m-1-8h1"></path></svg>`,
+                    bullets: [
+                        "Managed workforce sizes up to 14,500 personnel",
+                        "Housing, catering, utilities, transport, laundry, safety & logistics support",
+                        "Zero-disruption operational planning during peak manpower phases",
+                        "Cross-cultural workforce coordination (Japanese, Korean, Middle Eastern, Indonesian, Indian)"
+                    ]
+                },
+                "facility-ops": {
+                    title: "Facility & Infrastructure",
+                    icon: `<svg class="w-10 h-10 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>`,
+                    bullets: [
+                        "Oversaw 200+ critical infrastructure systems across global projects",
+                        "Predictive maintenance, AI-based planning & downtime reduction (up to 68%)",
+                        "Water, power, HVAC, fire systems, STP/WTP, heavy equipment coordination"
+                    ]
+                },
+                "logistics": {
+                    title: "Workforce Logistics & AI",
+                    icon: `<svg class="w-10 h-10 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z"></path></svg>`,
+                    bullets: [
+                        "Advanced planning for room allocation, workforce movement & mobilization",
+                        "AI-powered POB forecasting models used in manpower planning",
+                        "Transport synergy between camp & site"
+                    ]
+                },
+                "vendor-cost": {
+                    title: "Vendor & Commercial",
+                    icon: `<svg class="w-10 h-10 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>`,
+                    bullets: [
+                        "Managed 35+ contracts worth multi-million USD",
+                        "Annual cost savings exceeding $1.7M",
+                        "KPI dashboards, service evaluation, cost control"
+                    ]
+                },
+                "reporting-ai": {
+                    title: "AI & Digital Reporting",
+                    icon: `<svg class="w-10 h-10 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>`,
+                    bullets: [
+                        "16+ PowerBI dashboards (POB, Meals, Fleet, Maintenance, Workforce Trends)",
+                        "Reporting automation with AI templates (ChatGPT + BI tools)",
+                        "QR-based asset tracking & digital documentation",
+                        "Predictive maintenance using AI-powered anomaly detection"
+                    ]
+                },
+                // Digital & AI Services
+                "social-media": {
+                    title: "Social Media & Digital Mktg",
+                    icon: `<svg class="w-10 h-10 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>`,
+                    bullets: [
+                        "YouTube + Instagram content systems",
+                        "Social media strategy for businesses",
+                        "SEO, thumbnails, reels, story-based content",
+                        "Google Ads, Meta Ads, lead generation funnels",
+                        "Google Business Profile setup & optimization",
+                        "JustDial & IndiaMART setup for businesses",
+                        "AI-driven campaign planning"
+                    ]
+                },
+                "creator-brand": {
+                    title: "Digital Creator & Branding",
+                    icon: `<svg class="w-10 h-10 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>`,
+                    bullets: [
+                        "Product/business review videos",
+                        "Local business promotion packages",
+                        "Brand storytelling using short-form content",
+                        "Sponsored content & collaboration packages",
+                        "Property project promotions (UP/Lucknow expertise)"
+                    ]
+                },
+                "ai-media": {
+                    title: "AI Photography & Video",
+                    icon: `<svg class="w-10 h-10 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M12 21v-1m0-16a1 1 0 011 1v1a1 1 0 01-2 0V5a1 1 0 011-1zm0 16a1 1 0 011 1v1a1 1 0 01-2 0v-1a1 1 0 011-1z"></path></svg>`,
+                    bullets: [
+                        "AI headshots, portraits",
+                        "AI pre-wedding concepts",
+                        "AI birthday & event photos",
+                        "AI cinematic videos",
+                        "AI product photos",
+                        "Brand photography for digital identity"
+                    ]
+                },
+                "prompt-engineering": {
+                    title: "Prompt Engineering & AI Solutions",
+                    icon: `<svg class="w-10 h-10 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>`,
+                    bullets: [
+                        "Custom GPT workflows for business",
+                        "AI automation for reporting & communication",
+                        "Content generation systems",
+                        "Business process prompt frameworks",
+                        "AI editing pipelines (video + photo)"
+                    ]
+                },
+                "tutor-trainer": {
+                    title: "Tutor / Trainer (AI + Digital)",
+                    icon: `<svg class="w-10 h-10 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>`,
+                    bullets: [
+                        "Corporate AI training",
+                        "AI for EPC documentation",
+                        "Digital marketing workshops",
+                        "Social media consultancy",
+                        "Startup & MSME digital setup mentorship"
+                    ]
+                },
+                "author": {
+                    title: "Author & Book Sales",
+                    icon: `<svg class="w-10 h-10 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>`,
+                    bullets: [
+                        "Author of practical guides on:",
+                        "AI for productivity",
+                        "Digital content creation",
+                        "Business ideas for MSMEs",
+                        "Growth mindset & discipline",
+                        "Online + offline book promotion funnels"
+                    ]
+                }
+            };
+
+            // --- 1. Scroll Animation Logic ---
+            const scrollElements = document.querySelectorAll('.animate-on-scroll');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    }
+                });
+            }, {
+                threshold: 0.1 // 10% dikhne par trigger
+            });
+            scrollElements.forEach(el => observer.observe(el));
+            
+            // --- 2. Sticky Header Logic ---
+            const header = document.getElementById('main-header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+
+            // --- 3. Floating Expertise Panel Logic ---
+            const expertiseCards = document.querySelectorAll('.expertise-card');
+            const panel = document.getElementById('expertise-panel');
+            const panelCloseBtn = document.getElementById('panel-close-btn');
+            const panelIconContainer = document.getElementById('panel-icon-container');
+            const panelTitle = document.getElementById('panel-title');
+            const panelBullets = document.getElementById('panel-bullets');
+            const body = document.body;
+            const panelScroll = document.getElementById('expertise-panel-scroll');
+
+            const openPanel = (expertiseKey) => {
+                const data = expertiseData[expertiseKey];
+                if (!data) return;
+
+                // Populate data
+                panelIconContainer.innerHTML = data.icon;
+                panelTitle.textContent = data.title;
+                panelBullets.innerHTML = data.bullets.map(bullet => `
+                    <li class="flex items-start">
+                        <span class="text-gold text-2xl mr-3 mt-1">&bull;</span>
+                        <span class="text-gray-300 text-lg">${bullet}</span>
+                    </li>
+                `).join('');
+                
+                // Reset scroll to top
+                panelScroll.scrollTop = 0;
+
+                // Open panel
+                panel.classList.add('is-open');
+                body.style.overflow = 'hidden'; // Lock background scroll
+            };
+
+            const closePanel = () => {
+                panel.classList.remove('is-open');
+                body.style.overflow = 'auto'; // Unlock scroll
+            };
+
+            expertiseCards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const key = card.getAttribute('data-expertise-key');
+                    openPanel(key);
+                });
+            });
+
+            panelCloseBtn.addEventListener('click', closePanel);
+            panel.addEventListener('click', (e) => {
+                if (e.target === panel) {
+                    closePanel();
+                }
+            });
+
+            // --- 4. ✨ Gemini API Logic ---
+            const aiPromptEl = document.getElementById('ai-prompt');
+            const aiSubmitBtn = document.getElementById('ai-submit-btn');
+            const aiResultContainer = document.getElementById('ai-result-container');
+            const aiResultText = document.getElementById('ai-result-text');
+            const aiLoading = document.getElementById('ai-loading');
+
+            aiSubmitBtn.addEventListener('click', async () => {
+                const userQuery = aiPromptEl.value;
+                if (!userQuery) {
+                    aiResultText.innerText = "Kripya pehle ek business idea likhein.";
+                    aiResultContainer.style.display = 'block';
+                    return;
+                }
+
+                aiLoading.style.display = 'block';
+                aiResultContainer.style.display = 'none';
+                aiSubmitBtn.disabled = true;
+
+                try {
+                    const result = await callGeminiAPI(userQuery);
+                    aiResultText.innerText = result;
+                    aiResultContainer.style.display = 'block';
+                } catch (error) {
+                    console.error("Gemini API Error:", error);
+                    aiResultText.innerText = "Oops! AI abhi busy hai. Kripya thodi der baad try karein.";
+                    aiResultContainer.style.display = 'block';
+                } finally {
+                    aiLoading.style.display = 'none';
+                    aiSubmitBtn.disabled = false;
+                }
+            });
+
+            /**
+             * Helper function to fetch with exponential backoff
+             */
+            async function fetchWithBackoff(apiUrl, payload, retries = 5, delay = 1000) {
+                for (let i = 0; i < retries; i++) {
+                    try {
+                        const response = await fetch(apiUrl, {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify(payload)
+                        });
+
+                        if (response.ok) {
+                            return await response.json();
+                        }
+
+                        // Handle non-OK responses (like 503, 429)
+                        if (response.status === 429 || response.status === 503) {
+                            // Throttled, wait and retry
+                        } else {
+                            // Other error, don't retry
+                            throw new Error(`HTTP error! status: ${response.status}`);
+                        }
+
+                    } catch (error) {
+                        // Network error or fetch failed
+                    }
+                    
+                    // Wait before retrying
+                    await new Promise(resolve => setTimeout(resolve, delay));
+                    delay *= 2; // Exponential backoff
+                }
+                throw new Error("AI service is unavailable after multiple retries.");
+            }
+
+            /**
+             * Calls the Gemini API
+             */
+            async function callGeminiAPI(userQuery) {
+                const apiKey = ""; // API key is handled by the environment
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-25:generateContent?key=${apiKey}`;
+
+                const systemPrompt = "You are a world-class business advisor and startup consultant, like Deepak Sharma (Mr. Bharadvaja). A user will provide a business idea. Respond in 3-4 concise, encouraging, and actionable sentences about how to get started. Keep the tone professional but motivational. Respond in Hindi (Latin script).";
+
+                const payload = {
+                    contents: [{ parts: [{ text: userQuery }] }],
+                    systemInstruction: {
+                        parts: [{ text: systemPrompt }]
+                    },
+                };
+
+                const result = await fetchWithBackoff(apiUrl, payload);
+                
+                const candidate = result.candidates?.[0];
+                if (candidate && candidate.content?.parts?.[0]?.text) {
+                    return candidate.content.parts[0].text;
+                } else {
+                    throw new Error("Invalid response structure from AI API.");
+                }
+            }
+
+        });
+    </script>
+
+</body>
+</html>
