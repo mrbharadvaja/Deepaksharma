@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Deepak Sharma | Operations Leader & AI Transformation Expert</title>
+    <title>Deepak Sharma | Temp Facilities Operations Leader & AI Expert</title>
     
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -381,22 +381,22 @@
                         <div class="flex-grow">
                             <h3 class="text-3xl font-bold text-white mb-3">✨ Live AI Assistant (Gemini)</h3>
                             <p class="text-gray-400 text-lg">
-                                Yeh mera personal AI Assistant hai. Aap mujhse mere professional background ke baare mein kuch bhi puchh sakte hain (jaise: 'Deepak ka Basrah project experience kya tha?' ya 'cost control par unki expertise batao').
+                                This is my personal AI Assistant. You can ask it anything about my professional background (e.g., 'What was Deepak's role on the Basrah project?' or 'What is his expertise in cost control?').
                             </p>
                         </div>
                     </div>
 
                     <!-- AI Interaction Area -->
                     <div class="mt-6">
-                        <textarea id="ai-prompt" rows="3" class="w-full px-5 py-4 rounded-lg bg-gray-900 border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-gold focus:border-gold transition duration-300" placeholder="Aapka sawaal yahan type karein..."></textarea>
+                        <textarea id="ai-prompt" rows="3" class="w-full px-5 py-4 rounded-lg bg-gray-900 border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-gold focus:border-gold transition duration-300" placeholder="Type your question here..."></textarea>
                         
                         <button id="ai-submit-btn" class="w-full mt-4 px-8 py-4 bg-gold text-black text-lg font-semibold rounded-lg shadow-lg hover:bg-amber-300 transition duration-300 transform hover:scale-105">
-                            ✨ AI se Puchein
+                            ✨ Ask the AI
                         </button>
 
                         <!-- AI Result Area -->
                         <div id="ai-result-container" class="mt-6 hidden">
-                            <h4 class="text-xl font-bold text-white mb-3">AI Assistant ka Jawab:</h4>
+                            <h4 class="text-xl font-bold text-white mb-3">AI Assistant's Response:</h4>
                             <div id="ai-result-text" class="p-6 rounded-lg bg-gray-800 border border-gray-700 text-gray-300 whitespace-pre-wrap">
                                 <!-- AI response will be injected here -->
                             </div>
@@ -405,7 +405,7 @@
                         <!-- Loading Indicator -->
                         <div id="ai-loading" class="mt-6 text-center text-gold font-semibold hidden">
                             <div class="inline-block w-6 h-6 border-4 border-t-gold border-gray-700 rounded-full animate-spin" role="status"></div>
-                            <span class="ml-3">AI aapke sawaal ka jawab dhoond raha hai...</span>
+                            <span class="ml-3">AI is generating a response...</span>
                         </div>
 
                     </div>
@@ -822,7 +822,7 @@
             aiSubmitBtn.addEventListener('click', async () => {
                 const userQuery = aiPromptEl.value;
                 if (!userQuery) {
-                    aiResultText.innerText = "Kripya pehle ek sawaal type karein.";
+                    aiResultText.innerText = "Please type a question first.";
                     aiResultContainer.style.display = 'block';
                     return;
                 }
@@ -837,7 +837,7 @@
                     aiResultContainer.style.display = 'block';
                 } catch (error) {
                     console.error("Gemini API Error:", error);
-                    aiResultText.innerText = "Oops! AI abhi busy hai. Kripya thodi der baad try karein.";
+                    aiResultText.innerText = "Oops! The AI is busy right now. Please try again in a moment.";
                     aiResultContainer.style.display = 'block';
                 } finally {
                     aiLoading.style.display = 'none';
@@ -884,12 +884,11 @@
              */
             async function callGeminiAPI(userQuery) {
                 const apiKey = ""; // API key is handled by the environment
-                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-25:generateContent?key=${apiKey}`;
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
 
-                // New System Prompt: Grounded in Deepak Sharma's profile
-                const systemPrompt = `Aap Deepak Sharma ke personal AI assistant hain. Aapka kaam unke professional portfolio ke baare mein sawaalon ka jawab dena hai.
-Aapko unke baare mein yeh jaankari hai:
-- **Naam:** Deepak Sharma
+                // New System Prompt: Grounded in Deepak Sharma's profile (and in English)
+                const systemPrompt = `You are a personal AI assistant for Deepak Sharma. Your job is to answer questions about his professional portfolio. You have the following information about him:
+- **Name:** Deepak Sharma
 - **Role:** Accommodation & Facility Operations Leader, Digital Transformation Expert.
 - **Skills:** Camp Management (14,500+ workforce), Facility Ops (200+ systems), Workforce Logistics, AI-powered POB Forecasting, Vendor Management ($1.7M+ savings), Data Analysis (PowerBI, SAP), Digital Marketing (SEO, Ads), AI (Prompt Engineering, ChatGPT).
 - **Projects:**
@@ -900,12 +899,14 @@ Aapko unke baare mein yeh jaankari hai:
     - **Boubyan Seaport & KNRP, Kuwait:** Facility Administrator. $125K savings.
     - **Indian Refineries:** Ops for 8,200+ workforce.
 
-Aapka jawab hamesha professional, concise (2-3 sentences), aur helpful hona chahiye. Hamesha Hindi (Latin script) mein jawab dein.
-User ke sawaal ka jawab dein: "${userQuery}"`;
+Your response must always be professional, concise (2-3 sentences), helpful, and in **English**.
+Answer the user's question based on this information.`;
 
                 const payload = {
-                    // The systemPrompt is now part of the user query for simpler models
-                    contents: [{ parts: [{ text: systemPrompt }] }],
+                    contents: [{ parts: [{ text: userQuery }] }],
+                    systemInstruction: {
+                        parts: [{ text: systemPrompt }]
+                    },
                 };
 
                 const result = await fetchWithBackoff(apiUrl, payload);
