@@ -2,7 +2,7 @@
 <html lang="hi" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale-1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Deepak Sharma | Operations Leader & AI Transformation Expert</title>
     
     <!-- Tailwind CSS CDN -->
@@ -30,6 +30,29 @@
         }
         .border-gold {
             border-color: #fcd34d;
+        }
+        
+        /* Hero Section Background Image */
+        #home {
+            position: relative;
+            background: url('https://i.imgur.com/RvpZC6F.png') no-repeat center center;
+            background-size: cover;
+        }
+        /* Hero section overlay for text readability */
+        #home::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(75deg, rgba(10, 10, 10, 0.95) 0%, rgba(10, 10, 10, 0.8) 50%, rgba(10, 10, 10, 0.7) 100%);
+            z-index: 1;
+        }
+        /* Ensure hero content is above the overlay */
+        #home > .container {
+            position: relative;
+            z-index: 2;
         }
 
         /* Scroll-in animation */
@@ -118,6 +141,11 @@
             -webkit-backdrop-filter: blur(15px);
             border-bottom: 1px solid #222;
         }
+        
+        /* Fix for sticky header anchor link scroll */
+        section[id] {
+            scroll-margin-top: 100px; /* Adjust this value based on your header height */
+        }
     </style>
 </head>
 <body class="overflow-x-hidden">
@@ -204,7 +232,7 @@
                         <span class="bg-gray-800 text-gold font-medium px-4 py-2 rounded-full">JGC Corporation</span>
                         <span class="bg-gray-800 text-gold font-medium px-4 py-2 rounded-full">BP Indonesia</span>
                         <span class="bg-gray-800 text-gray-300 font-medium px-4 py-2 rounded-full">Hyundai E&C (HDEC)</span>
-                        <span class="bg-gray-800 text-gray-300 font-medium px-4 py-2 rounded-full">KNRP Kuwait</span>
+                        <span class="bg-gray-800 text-gray-300 font-medium px-4 py-2 rounded-full">Boubyan Seaport</span>
                         <span class="bg-gray-800 text-gray-300 font-medium px-4 py-2 rounded-full">Basrah Refinery</span>
                     </div>
                 </div>
@@ -267,10 +295,79 @@
                         <span class="font-semibold text-gold">View Details &rarr;</span>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <!-- Digital, AI & Creator Services Section -->
+        <section id="expertise-digital" class="py-24 bg-gray-900">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl md:text-5xl font-bold text-center text-white mb-16 animate-on-scroll">Digital, AI & Creator Services</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Card 6 -->
+                    <div class="expertise-card bg-black p-8 rounded-xl border border-gray-800 animate-on-scroll" data-expertise-key="social-media">
+                        <div class="w-16 h-16 bg-gray-800 rounded-full flex items-center justify-center mb-6">
+                            <svg class="w-8 h-8 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-3">Social Media & Digital Mktg</h3>
+                        <p class="text-gray-400 mb-5">YouTube/IG systems, SEO, Google/Meta Ads, funnels.</p>
+                        <span class="font-semibold text-gold">View Details &rarr;</span>
+                    </div>
+                    
+                    <!-- Card 7 -->
+                    <div class="expertise-card bg-black p-8 rounded-xl border border-gray-800 animate-on-scroll" style="transition-delay: 0.1s;" data-expertise-key="creator-brand">
+                        <div class="w-16 h-16 bg-gray-800 rounded-full flex items-center justify-center mb-6">
+                           <svg class="w-8 h-8 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-3">Digital Creator & Branding</h3>
+                        <p class="text-gray-400 mb-5">Product reviews, local business promotion, storytelling.</p>
+                        <span class="font-semibold text-gold">View Details &rarr;</span>
+                    </div>
+
+                    <!-- Card 8 -->
+                    <div class="expertise-card bg-black p-8 rounded-xl border border-gray-800 animate-on-scroll" style="transition-delay: 0.2s;" data-expertise-key="ai-media">
+                        <div class="w-16 h-16 bg-gray-800 rounded-full flex items-center justify-center mb-6">
+                            <svg class="w-8 h-8 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M12 21v-1m0-16a1 1 0 011 1v1a1 1 0 01-2 0V5a1 1 0 011-1zm0 16a1 1 0 011 1v1a1 1 0 01-2 0v-1a1 1 0 011-1z"></path></svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-3">AI Photography & Video</h3>
+                        <p class="text-gray-400 mb-5">AI headshots, cinematic videos, product photos, concepts.</p>
+                        <span class="font-semibold text-gold">View Details &rarr;</span>
+                    </div>
+
+                    <!-- Card 9 -->
+                    <div class="expertise-card bg-black p-8 rounded-xl border border-gray-800 animate-on-scroll" data-expertise-key="prompt-engineering">
+                        <div class="w-16 h-16 bg-gray-800 rounded-full flex items-center justify-center mb-6">
+                           <svg class="w-8 h-8 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-3">Prompt Engineering</h3>
+                        <p class="text-gray-400 mb-5">Custom GPTs, AI reporting workflows, content systems.</p>
+                        <span class="font-semibold text-gold">View Details &rarr;</span>
+                    </div>
+
+                    <!-- Card 10 -->
+                    <div class="expertise-card bg-black p-8 rounded-xl border border-gray-800 animate-on-scroll" style="transition-delay: 0.1s;" data-expertise-key="tutor-trainer">
+                        <div class="w-16 h-16 bg-gray-800 rounded-full flex items-center justify-center mb-6">
+                            <svg class="w-8 h-8 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-3">Tutor / Trainer (AI + Digital)</h3>
+                        <p class="text-gray-400 mb-5">Corporate AI training, digital workshops, MSME mentorship.</p>
+                        <span class="font-semibold text-gold">View Details &rarr;</span>
+                    </div>
+                    
+                    <!-- Card 11 -->
+                    <div class="expertise-card bg-black p-8 rounded-xl border border-gray-800 animate-on-scroll" style="transition-delay: 0.2s;" data-expertise-key="author">
+                        <div class="w-16 h-16 bg-gray-800 rounded-full flex items-center justify-center mb-6">
+                            <svg class="w-8 h-8 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-3">Author & Book Sales</h3>
+                        <p class="text-gray-400 mb-5">Author of guides on AI, content creation, and business.</p>
+                        <span class="font-semibold text-gold">View Details &rarr;</span>
+                    </div>
+                </div>
 
                 <!-- 
                 ============================================================
-                ✨ GEMINI API INTEGRATION - START
+                ✨ GEMINI API INTEGRATION - START (UPGRADED)
                 ============================================================
                 -->
                 <div class="expertise-card bg-black p-8 rounded-xl border border-gold border-2 shadow-2xl shadow-amber-300/10 animate-on-scroll md:col-span-2 lg:col-span-3 mt-10" style="transition-delay: 0.3s;">
@@ -282,24 +379,24 @@
                         
                         <!-- Title & Description -->
                         <div class="flex-grow">
-                            <h3 class="text-3xl font-bold text-white mb-3">✨ Live Gemini AI Demo</h3>
+                            <h3 class="text-3xl font-bold text-white mb-3">✨ Live AI Assistant (Gemini)</h3>
                             <p class="text-gray-400 text-lg">
-                                Mere AI skills ko live test karein. Ek business idea likhein (jaise 'students ke liye coffee shop') aur AI ko ek mini-strategy generate karne dein.
+                                Yeh mera personal AI Assistant hai. Aap mujhse mere professional background ke baare mein kuch bhi puchh sakte hain (jaise: 'Deepak ka Basrah project experience kya tha?' ya 'cost control par unki expertise batao').
                             </p>
                         </div>
                     </div>
 
                     <!-- AI Interaction Area -->
                     <div class="mt-6">
-                        <textarea id="ai-prompt" rows="3" class="w-full px-5 py-4 rounded-lg bg-gray-900 border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-gold focus:border-gold transition duration-300" placeholder="Aapka business idea yahan likhein..."></textarea>
+                        <textarea id="ai-prompt" rows="3" class="w-full px-5 py-4 rounded-lg bg-gray-900 border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-gold focus:border-gold transition duration-300" placeholder="Aapka sawaal yahan type karein..."></textarea>
                         
                         <button id="ai-submit-btn" class="w-full mt-4 px-8 py-4 bg-gold text-black text-lg font-semibold rounded-lg shadow-lg hover:bg-amber-300 transition duration-300 transform hover:scale-105">
-                            ✨ Strategy Generate Karein
+                            ✨ AI se Puchein
                         </button>
 
                         <!-- AI Result Area -->
                         <div id="ai-result-container" class="mt-6 hidden">
-                            <h4 class="text-xl font-bold text-white mb-3">AI Advisor ka Sujhav:</h4>
+                            <h4 class="text-xl font-bold text-white mb-3">AI Assistant ka Jawab:</h4>
                             <div id="ai-result-text" class="p-6 rounded-lg bg-gray-800 border border-gray-700 text-gray-300 whitespace-pre-wrap">
                                 <!-- AI response will be injected here -->
                             </div>
@@ -308,7 +405,7 @@
                         <!-- Loading Indicator -->
                         <div id="ai-loading" class="mt-6 text-center text-gold font-semibold hidden">
                             <div class="inline-block w-6 h-6 border-4 border-t-gold border-gray-700 rounded-full animate-spin" role="status"></div>
-                            <span class="ml-3">AI strategy generate kar raha hai...</span>
+                            <span class="ml-3">AI aapke sawaal ka jawab dhoond raha hai...</span>
                         </div>
 
                     </div>
@@ -331,7 +428,7 @@
                     
                     <!-- Project 1 -->
                     <div class="project-card bg-gray-900 rounded-xl overflow-hidden animate-on-scroll">
-                        <img src="https://placehold.co/600x400/b91c1c/fcd34d?text=Indonesia+Project" alt="BP JGC Tangguh" class="w-full h-60 object-cover">
+                        <img src="https://i.imgur.com/4INahZZ.png" alt="BP JGC Tangguh" class="w-full h-60 object-cover">
                         <div class="p-8">
                             <h3 class="text-2xl font-bold text-white mb-3">🇮🇩 BP-JGC Tangguh (Indonesia)</h3>
                             <p class="text-gray-400 mb-4">Role: Accommodation Coordinator. Digital & AI Reporting.</p>
@@ -341,7 +438,7 @@
 
                     <!-- Project 2 -->
                     <div class="project-card bg-gray-900 rounded-xl overflow-hidden animate-on-scroll" style="transition-delay: 0.1s;">
-                        <img src="https://placehold.co/600x400/1e3a8a/fcd34d?text=Basrah+Project+(Iraq)" alt="Basrah Refinery Upgrading Project" class="w-full h-60 object-cover">
+                        <img src="https://i.imgur.com/70Nb1MV.png" alt="Basrah Refinery Upgrading Project" class="w-full h-60 object-cover">
                         <div class="p-8">
                             <h3 class="text-2xl font-bold text-white mb-3">🇮🇶 Basrah Refinery (Iraq)</h3>
                             <p class="text-gray-400 mb-4">Role: Sr. Accommodation & Facility Ops. 14,500 Workforce.</p>
@@ -351,7 +448,7 @@
 
                     <!-- Project 3 -->
                     <div class="project-card bg-gray-900 rounded-xl overflow-hidden animate-on-scroll" style="transition-delay: 0.2s;">
-                        <img src="https://placehold.co/600x400/065f46/fcd34d?text=Amiral+STP+(KSA)" alt="Amiral STP Package #1 (Saudi Arabia)" class="w-full h-60 object-cover">
+                        <img src="https://i.imgur.com/OVvB4nz.png" alt="Amiral STP Package #1 (Saudi Arabia)" class="w-full h-60 object-cover">
                         <div class="p-8">
                             <h3 class="text-2xl font-bold text-white mb-3">🇸🇦 Amiral STP (Saudi Arabia)</h3>
                             <p class="text-gray-400 mb-4">Role: Accommodation & Digital Systems Specialist (Hyundai).</p>
@@ -361,7 +458,7 @@
                     
                     <!-- Project 4 -->
                     <div class="project-card bg-gray-900 rounded-xl overflow-hidden animate-on-scroll">
-                        <img src="https://placehold.co/600x400/7e22ce/fcd34d?text=Lusail+Tower+(Qatar)" alt="Lusail Plaza Tower Project (Qatar)" class="w-full h-60 object-cover">
+                        <img src="https://i.imgur.com/ZtH6IDD.png" alt="Lusail Plaza Tower Project (Qatar)" class="w-full h-60 object-cover">
                         <div class="p-8">
                             <h3 class="text-2xl font-bold text-white mb-3">🇶🇦 Lusail Plaza Tower (Qatar)</h3>
                             <p class="text-gray-400 mb-4">Role: Facility Operations Lead. 3,200 Workforce.</p>
@@ -369,19 +466,19 @@
                         </div>
                     </div>
 
-                    <!-- Project 5 -->
+                    <!-- Project 5 (Updated) -->
                     <div class="project-card bg-gray-900 rounded-xl overflow-hidden animate-on-scroll" style="transition-delay: 0.1s;">
-                        <img src="https://placehold.co/600x400/a16207/fcd34d?text=KNRP+(Kuwait)" alt="KNRP LNGI (Kuwait)" class="w-full h-60 object-cover">
+                        <img src="https://i.imgur.com/jwNrhwv.png" alt="Boubyan Seaport & KNRP (Kuwait)" class="w-full h-60 object-cover">
                         <div class="p-8">
-                            <h3 class="text-2xl font-bold text-white mb-3">🇰🇼 KNRP LNGI (Kuwait)</h3>
-                            <p class="text-gray-400 mb-4">Role: Digital & Facility Ops. 9,300 Workforce.</p>
+                            <h3 class="text-2xl font-bold text-white mb-3">🇰🇼 Boubyan Seaport & KNRP (Kuwait)</h3>
+                            <p class="text-gray-400 mb-4">Role: Facility Administrator. 9,300 Workforce.</p>
                             <span class="inline-block bg-gold/10 text-gold text-sm font-bold px-4 py-1 rounded-full">$125K Quarterly Saving</span>
                         </div>
                     </div>
 
                     <!-- Project 6 -->
                     <div class="project-card bg-gray-900 rounded-xl overflow-hidden animate-on-scroll" style="transition-delay: 0.2s;">
-                        <img src="https://placehold.co/600x400/db2777/fcd34d?text=Indian+Refineries" alt="Indian Refineries" class="w-full h-60 object-cover">
+                        <img src="https://i.imgur.com/mVlWj01.png" alt="Indian Refineries" class="w-full h-60 object-cover">
                         <div class="p-8">
                             <h3 class="text-2xl font-bold text-white mb-3">🇮🇳 Indian Refineries</h3>
                             <p class="text-gray-400 mb-4">Role: Accommodation & Workforce Ops (Jamnagar, Mangalore, etc.)</p>
@@ -392,44 +489,41 @@
             </div>
         </section>
 
-        <!-- Skills & Education Section -->
+        <!-- Skills & Education Section (Updated) -->
         <section id="skills" class="py-24 bg-gray-900">
             <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16">
                 <!-- Left: Technical Skills -->
                 <div class="animate-on-scroll">
-                    <h2 class="text-3xl font-bold text-white mb-8">Technical Skills</h2>
+                    <h2 class="text-3xl font-bold text-white mb-8">Technical Skills & Certifications</h2>
                     <div class="flex flex-wrap gap-3">
                         <span class="bg-gray-800 text-gold font-medium px-4 py-2 rounded-full">PowerBI</span>
-                        <span class="bg-gray-800 text-gold font-medium px-4 py-2 rounded-full">ChatGPT Automation</span>
+                        <span class="bg-gray-800 text-gold font-medium px-4 py-2 rounded-full">Data Analysis</span>
                         <span class="bg-gray-800 text-gold font-medium px-4 py-2 rounded-full">Prompt Engineering</span>
+                        <span class="bg-gray-800 text-gold font-medium px-4 py-2 rounded-full">NEBOSH</span>
                         <span class="bg-gray-800 text-gray-300 font-medium px-4 py-2 rounded-full">SAP MM/PM</span>
+                        <span class="bg-gray-800 text-gray-300 font-medium px-4 py-2 rounded-full">ERP</span>
+                        <span class="bg-gray-800 text-gray-300 font-medium px-4 py-2 rounded-full">MEP</span>
+                        <span class="bg-gray-800 text-gray-300 font-medium px-4 py-2 rounded-full">Advance MS Office</span>
                         <span class="bg-gray-800 text-gray-300 font-medium px-4 py-2 rounded-full">CAFM & Maximo</span>
-                        <span class="bg-gray-800 text-gray-300 font-medium px-4 py-2 rounded-full">SEO</span>
-                        <span class="bg-gray-800 text-gray-300 font-medium px-4 py-2 rounded-full">Google & Meta Ads</span>
-                        <span class="bg-gray-800 text-gray-300 font-medium px-4 py-2 rounded-full">AI Forecasting</span>
                         <span class="bg-gray-800 text-gray-300 font-medium px-4 py-2 rounded-full">SOP Development</span>
-                        <span class="bg-gray-800 text-gray-300 font-medium px-4 py-2 rounded-full">Vendor Negotiation</span>
                     </div>
                 </div>
 
-                <!-- Right: Education & Certs -->
+                <!-- Right: Education -->
                 <div class="animate-on-scroll" style="transition-delay: 0.1s;">
-                    <h2 class="text-3xl font-bold text-white mb-8">Education & Certifications</h2>
+                    <h2 class="text-3xl font-bold text-white mb-8">Education</h2>
                     <ul class="space-y-4 text-gray-300">
                         <li class="flex items-center">
                             <span class="text-gold mr-3">&#9733;</span> Master’s in Artificial Intelligence (Distinction)
                         </li>
                         <li class="flex items-center">
-                            <span class="text-gold mr-3">&#9733;</span> Advanced Data Analytics
-                        </li>
-                         <li class="flex items-center">
                             <span class="text-gold mr-3">&#9733;</span> MBA (HR & Finance)
                         </li>
-                        <li class="flex items-center">
-                            <span class="text-gold mr-3">&#9733;</span> NEBOSH
+                         <li class="flex items-center">
+                            <span class="text-gold mr-3">&#9733;</span> Graduation (English Hons.)
                         </li>
                         <li class="flex items-center">
-                            <span class="text-gold mr-3">&#9733;</span> Mechanical Systems (HVAC/STP/WTP)
+                            <span class="text-gold mr-3">&#9733;</span> Diploma in Computer Science
                         </li>
                     </ul>
                 </div>
@@ -443,15 +537,23 @@
                 <p class="text-xl text-gray-400 mb-12 animate-on-scroll" style="transition-delay: 0.1s;">
                     Available for senior roles in Operations, Logistics, and Digital Transformation, or for Digital/AI consulting projects.
                 </p>
-                <form class="space-y-6 animate-on-scroll" style="transition-delay: 0.2s;">
+                <!-- 
+                  IMPORTANT: Yeh form abhi sirf design hai. Isko chalu karne ke liye Formspree.io jaisi service 
+                  par 'action' URL set karna hoga.
+                -->
+                <form action="#" method="POST" class="space-y-6 animate-on-scroll" style="transition-delay: 0.2s;">
                     <div>
-                        <input type="text" placeholder="Your Name" class="w-full px-5 py-4 rounded-lg bg-gray-900 border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-gold focus:border-gold transition duration-300">
+                        <input type="text" name="name" placeholder="Your Name" class="w-full px-5 py-4 rounded-lg bg-gray-900 border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-gold focus:border-gold transition duration-300" required>
                     </div>
                     <div>
-                        <input type="email" placeholder="Your Email" class="w-full px-5 py-4 rounded-lg bg-gray-900 border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-gold focus:border-gold transition duration-300">
+                        <input type="email" name="email" placeholder="Your Email" class="w-full px-5 py-4 rounded-lg bg-gray-900 border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-gold focus:border-gold transition duration-300" required>
+                    </div>
+                    <!-- New Phone Number Field -->
+                    <div>
+                        <input type="tel" name="phone" placeholder="Your Phone Number (Optional)" class="w-full px-5 py-4 rounded-lg bg-gray-900 border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-gold focus:border-gold transition duration-300">
                     </div>
                     <div>
-                        <textarea placeholder="Your Message" rows="5" class="w-full px-5 py-4 rounded-lg bg-gray-900 border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-gold focus:border-gold transition duration-300"></textarea>
+                        <textarea name="message" placeholder="Your Message" rows="5" class="w-full px-5 py-4 rounded-lg bg-gray-900 border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-gold focus:border-gold transition duration-300" required></textarea>
                     </div>
                     <div>
                         <button type="submit" class="w-full px-8 py-4 bg-gold text-black text-lg font-semibold rounded-lg shadow-lg hover:bg-amber-300 transition duration-300 transform hover:scale-105">
@@ -697,7 +799,9 @@
             expertiseCards.forEach(card => {
                 card.addEventListener('click', () => {
                     const key = card.getAttribute('data-expertise-key');
-                    openPanel(key);
+                    if(key) { // Sirf data-expertise-key wale cards hi panel open karenge
+                        openPanel(key);
+                    }
                 });
             });
 
@@ -708,7 +812,7 @@
                 }
             });
 
-            // --- 4. ✨ Gemini API Logic ---
+            // --- 4. ✨ Gemini API Logic (Upgraded) ---
             const aiPromptEl = document.getElementById('ai-prompt');
             const aiSubmitBtn = document.getElementById('ai-submit-btn');
             const aiResultContainer = document.getElementById('ai-result-container');
@@ -718,7 +822,7 @@
             aiSubmitBtn.addEventListener('click', async () => {
                 const userQuery = aiPromptEl.value;
                 if (!userQuery) {
-                    aiResultText.innerText = "Kripya pehle ek business idea likhein.";
+                    aiResultText.innerText = "Kripya pehle ek sawaal type karein.";
                     aiResultContainer.style.display = 'block';
                     return;
                 }
@@ -757,7 +861,6 @@
                             return await response.json();
                         }
 
-                        // Handle non-OK responses (like 503, 429)
                         if (response.status === 429 || response.status === 503) {
                             // Throttled, wait and retry
                         } else {
@@ -777,19 +880,32 @@
             }
 
             /**
-             * Calls the Gemini API
+             * Calls the Gemini API (Upgraded System Prompt)
              */
             async function callGeminiAPI(userQuery) {
                 const apiKey = ""; // API key is handled by the environment
                 const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-25:generateContent?key=${apiKey}`;
 
-                const systemPrompt = "You are a world-class business advisor and startup consultant, like Deepak Sharma (Mr. Bharadvaja). A user will provide a business idea. Respond in 3-4 concise, encouraging, and actionable sentences about how to get started. Keep the tone professional but motivational. Respond in Hindi (Latin script).";
+                // New System Prompt: Grounded in Deepak Sharma's profile
+                const systemPrompt = `Aap Deepak Sharma ke personal AI assistant hain. Aapka kaam unke professional portfolio ke baare mein sawaalon ka jawab dena hai.
+Aapko unke baare mein yeh jaankari hai:
+- **Naam:** Deepak Sharma
+- **Role:** Accommodation & Facility Operations Leader, Digital Transformation Expert.
+- **Skills:** Camp Management (14,500+ workforce), Facility Ops (200+ systems), Workforce Logistics, AI-powered POB Forecasting, Vendor Management ($1.7M+ savings), Data Analysis (PowerBI, SAP), Digital Marketing (SEO, Ads), AI (Prompt Engineering, ChatGPT).
+- **Projects:**
+    - **BP-JGC Tangguh, Indonesia:** Accommodation Coordinator. AI Reporting.
+    - **Basrah Refinery, Iraq:** Sr. Accommodation & Facility Ops. 14,500 workforce. $1M+ savings. 425+ Zero LTI.
+    - **Amiral STP, Saudi Arabia:** Digital Systems Specialist. 99.7% SLA.
+    - **Lusail Plaza, Qatar:** Facility Ops Lead. 3,200 workforce.
+    - **Boubyan Seaport & KNRP, Kuwait:** Facility Administrator. $125K savings.
+    - **Indian Refineries:** Ops for 8,200+ workforce.
+
+Aapka jawab hamesha professional, concise (2-3 sentences), aur helpful hona chahiye. Hamesha Hindi (Latin script) mein jawab dein.
+User ke sawaal ka jawab dein: "${userQuery}"`;
 
                 const payload = {
-                    contents: [{ parts: [{ text: userQuery }] }],
-                    systemInstruction: {
-                        parts: [{ text: systemPrompt }]
-                    },
+                    // The systemPrompt is now part of the user query for simpler models
+                    contents: [{ parts: [{ text: systemPrompt }] }],
                 };
 
                 const result = await fetchWithBackoff(apiUrl, payload);
